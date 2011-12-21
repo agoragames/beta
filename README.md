@@ -8,6 +8,8 @@ Beta is an access control library that uses a Redis whitelist to control authori
 
 # Usage
 
+First we setup our initializer.
+
 ``` ruby
 Beta.config do |config|
   redis = $redis 
@@ -15,8 +17,11 @@ Beta.config do |config|
   namespace    = 'awesome-app'
   redirect_url = 'http://majorleaguegaming.com'
 end
+```
 
-# app/controllers/application_controller.rb
+Then, in our controller, include our access helpers and add the before filter:
+
+```
 include Beta::AccessHelpers
 before_filter :whitelist 
 
