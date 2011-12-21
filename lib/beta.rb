@@ -7,9 +7,14 @@ class Beta
       yield self
     end
   end
-
+  
+  # AccessHelpers encapsulates the functionality for whitespacing.  This will 
+  # usually be included in ApplicationController and acccessed as before_filters
   module AccessHelpers
-    def whitelist
+    # Uses redis whitelist and cookies to detect beta access
+    #
+    # @param [String, nil] Location to redirect to on failure. Defaults to system config of Beta URL
+    def whitelist(redirection = nil)
       return true unless Rails.env.production?
 
       if cookies.signed["#{Beta.namespace}-beta"] == "#{Beta.namespace}-beta-#{request.remote_addr}"
@@ -19,7 +24,7 @@ class Beta
       return false unless authenticate
 
       unless Beta.redis.sismember("#{Beta.namespace}:#{Rails.env}:beta", current_user.try(Beta.uid))
-        redirect_to(Beta.redirect_url)
+        redirect_to(redirection || Beta.redirect_url)
         return
       end
 
