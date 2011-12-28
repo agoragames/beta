@@ -5,8 +5,8 @@ require "beta/version"
 Gem::Specification.new do |s|
   s.name        = "beta"
   s.version     = Beta::VERSION
-  s.authors     = ["Andrew Nordman"]
-  s.email       = ["cadwallion@gmail.com"]
+  s.authors     = ["Andrew Nordman", "Logan Koester", "Matt Wilson"]
+  s.email       = ["cadwallion@gmail.com", "lkoester@majorleaguegaming.com", "mwilson@majorleaguegaming.com"]
   s.homepage    = ""
   s.summary     = %q{Beta restriction gem}
   s.description = %q{Gem to handle multiple common cases of beta rollout}
