@@ -2,3 +2,10 @@
 .bundle
 Gemfile.lock
 pkg/*
+coverage
+rdoc
+doc
+.yardoc
+.bundle
+spec/dummy/log/
+spec/dummy/log/*.log

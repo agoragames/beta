@@ -5,9 +5,9 @@ require "beta/version"
 Gem::Specification.new do |s|
   s.name        = "beta"
   s.version     = Beta::VERSION
-  s.authors     = ["Andrew Nordman", "Logan Koester", "Matt Wilson"]
-  s.email       = ["cadwallion@gmail.com", "lkoester@majorleaguegaming.com", "mwilson@majorleaguegaming.com"]
-  s.homepage    = ""
+  s.authors     = ["Andrew Nordman", "Logan Koester", "Matt Wilson", "David Czarnecki"]
+  s.email       = ["cadwallion@gmail.com", "lkoester@majorleaguegaming.com", "mwilson@majorleaguegaming.com", "dczarnecki@majorleaguegaming.com"]
+  s.homepage    = "https://github.com/agoragames/beta"
   s.summary     = %q{Beta restriction gem}
   s.description = %q{Gem to handle multiple common cases of beta rollout}
 
@@ -18,7 +18,11 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # specify any dependencies here; for example:
+  s.add_development_dependency "rake"
   s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "rails", "~>3.1.0"
+  s.add_development_dependency "fakeredis"
+
+  s.add_dependency "redis"
 end
