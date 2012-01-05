@@ -20,8 +20,7 @@ Beta.config do |config|
 end
 ```
 
-Finally, Beta requires the existence of a `current_user` to use the 
-`whitelist` or `current_user_on_whitelist?` methods.
+Finally, Beta requires the existence of a `current_user` which responds to the attribute specified in the `uid` configuration key used in both the `whitelist` and `current_user_on_whitelist?` methods.
 
 # Usage
 
@@ -30,5 +29,5 @@ the following methods:
 
 * `whitelist` - Used as a before\_filter to ensure the `current_user` has access
 * `is_whitelisted?(user)` checks to see if the given user is on the list.
-* `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special. Requires the existence of a `current_user` method.
+* `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special.
 
