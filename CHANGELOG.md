@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 1.0.0
+## 0.0.3
 
 * Public release
 * Added Beta.environments to control what environments Beta access is controlled for
