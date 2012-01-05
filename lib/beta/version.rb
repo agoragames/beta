@@ -1,3 +1,3 @@
-class Beta
+module Beta
   VERSION = "0.0.2"
 end

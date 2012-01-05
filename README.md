@@ -32,4 +32,4 @@ Requires the existence of a `current_user` method.
 ## Other helpers
 
 * `is_whitelisted?(user)` checks to see if the given user is on the list.
-* `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special.
+* `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special. Requires the existence of a `current_user` method.
