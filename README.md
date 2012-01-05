@@ -6,6 +6,10 @@ Beta is an access control library that uses a Redis whitelist to control authori
 
 `gem install beta`
 
+or
+
+`gem 'beta', '1.0.0'`
+
 # Usage
 
 First we setup our initializer.
@@ -16,6 +20,7 @@ Beta.config do |config|
   uid = 'mlg_id'
   namespace    = 'awesome-app'
   redirect_url = 'http://majorleaguegaming.com'
+  environments = [:production]
 end
 ```
 
@@ -32,4 +37,4 @@ Requires the existence of a `current_user` method.
 ## Other helpers
 
 * `is_whitelisted?(user)` checks to see if the given user is on the list.
-* `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special.
+* `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special. Requires the existence of a `current_user` method.
