@@ -6,6 +6,10 @@ Beta is an access control library that uses a Redis whitelist to control authori
 
 `gem install beta`
 
+or
+
+`gem 'beta', '1.0.0'`
+
 # Usage
 
 First we setup our initializer.
