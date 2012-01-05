@@ -6,7 +6,7 @@ module Beta
     #
     # @param [String, nil] Location to redirect to on failure. Defaults to system config of Beta URL
     def whitelist redirection = nil
-      return true unless ::Rails.env.production?
+      return true unless Beta.environments.include?(::Rails.env)
 
       if cookies.signed["#{Beta.namespace}-beta"] == "#{Beta.namespace}-beta-#{request.remote_addr}"
         return true

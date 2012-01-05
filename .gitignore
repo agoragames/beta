@@ -7,3 +7,5 @@ rdoc
 doc
 .yardoc
 .bundle
+spec/dummy/log/
+spec/dummy/log/*.log

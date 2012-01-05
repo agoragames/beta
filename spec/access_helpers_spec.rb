@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'redis'
 
 class HelperInstance
   include Beta::AccessHelpers
@@ -20,17 +19,19 @@ describe Beta::AccessHelpers do
     @redis = Redis.new
     @redis.flushdb
 
-    Beta.redis = @redis
-    Beta.namespace = 'gem'
-    Beta.redirect_url = 'http://www.site.com/not-authorized'
-    Beta.uid = 'uid'
+    Beta.config do |config|
+      config.redis = @redis
+      config.namespace = 'gem'
+      config.redirect_url = 'http://www.site.com/not-authorized'
+      config.uid = 'uid'
+    end
   end
 
   describe "#is_whitelisted?" do
     it 'should return true if a user is whitelisted' do
       user = User.new
       helper = HelperInstance.new
-      @redis.sadd("#{Beta.namespace}:#{Rails.env}:beta", user.uid)
+      @redis.sadd("#{Beta.namespace}:#{::Rails.env}:beta", user.uid)
       helper.is_whitelisted?(user).should be(true)
     end
 
@@ -44,7 +45,7 @@ describe Beta::AccessHelpers do
   describe "current_user_on_whitelist?" do
     it 'should return true if a user is on whitelist' do
       helper = HelperInstance.new
-      @redis.sadd("#{Beta.namespace}:#{Rails.env}:beta", 35)
+      @redis.sadd("#{Beta.namespace}:#{::Rails.env}:beta", 35)
       helper.current_user_on_whitelist?.should be(true)
     end
 

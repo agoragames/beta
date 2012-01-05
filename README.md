@@ -16,6 +16,7 @@ Beta.config do |config|
   uid = 'mlg_id'
   namespace    = 'awesome-app'
   redirect_url = 'http://majorleaguegaming.com'
+  environments = [:production]
 end
 ```
 

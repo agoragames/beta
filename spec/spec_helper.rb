@@ -1,6 +1,7 @@
 require 'rspec'
 require 'beta'
 require 'fakeredis'
+require 'redis'
 
 ENV["RAILS_ENV"] ||= 'test'
 require 'dummy/config/environment'
