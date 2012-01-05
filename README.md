@@ -1,18 +1,14 @@
 # Beta
 
 Beta is an access control library that uses a Redis whitelist to control authorization.
+It relies upon the Rails.env variable to check against its list of environments to 
+trigger on.
 
 # Install
 
-`gem install beta`
+Install with `gem install beta` or add `gem 'beta'` to your Gemfile.
 
-or
-
-`gem 'beta'`
-
-# Usage
-
-First we setup our initializer.
+Then, add an initializer to our Rails app to configure Beta:
 
 ``` ruby
 Beta.config do |config|
@@ -24,17 +20,15 @@ Beta.config do |config|
 end
 ```
 
-Then, in our controller, include our access helpers and add the before filter:
+Finally, Beta requires the existence of a `current_user` to use the 
+`whitelist` or `current_user_on_whitelist?` methods.
 
-```
-include Beta::AccessHelpers
-before_filter :whitelist
+# Usage
 
-```
+By adding `include Beta::AccesHelpers` to ApplicationController, you get access to
+the following methods:
 
-Requires the existence of a `current_user` method.
-
-## Other helpers
-
+* `whitelist` - Used as a before\_filter to ensure the `current_user` has access
 * `is_whitelisted?(user)` checks to see if the given user is on the list.
 * `current_user_on_whitelist?` leverages `is_whitelisted?` to tell you if the current user is special. Requires the existence of a `current_user` method.
+
