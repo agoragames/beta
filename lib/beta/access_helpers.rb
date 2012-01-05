@@ -1,6 +1,6 @@
 module Beta
-  # AccessHelpers encapsulates the functionality for whitespacing.  This will
-  # usually be included in ApplicationController and acccessed as before_filters
+  # AccessHelpers encapsulates the functionality for whitelisting.  This will
+  # usually be included in ApplicationController and acccessed via a before_filter.
   module AccessHelpers
     # Uses redis whitelist and cookies to detect beta access. Redirects on failure.
     #
