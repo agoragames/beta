@@ -8,7 +8,7 @@ Beta is an access control library that uses a Redis whitelist to control authori
 
 or
 
-`gem 'beta', '1.0.0'`
+`gem 'beta'`
 
 # Usage
 
