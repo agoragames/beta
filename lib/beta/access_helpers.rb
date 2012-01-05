@@ -12,7 +12,7 @@ module Beta
         return true
       end
 
-      return false unless authenticate
+      return false unless current_user
 
       unless current_user_on_whitelist?
         redirect_to(redirection || Beta.redirect_url)
