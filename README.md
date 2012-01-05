@@ -1,14 +1,14 @@
 # Beta [![Build Status](https://secure.travis-ci.org/agoragames/beta.png)](https://secure.travis-ci.org/agoragames/beta.png)
 
 Beta is an access control library that uses a Redis whitelist to control authorization.
-It relies upon the Rails.env variable to check against its list of environments to 
+It relies upon the `Rails.env` variable to check against its list of environments to 
 trigger on.
 
 # Install
 
 Install with `gem install beta` or add `gem 'beta'` to your Gemfile.
 
-Then, add an initializer to our Rails app to configure Beta:
+Then, add an initializer in your Rails application to configure Beta:
 
 ``` ruby
 Beta.config do |config|
