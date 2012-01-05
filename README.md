@@ -1,4 +1,4 @@
-# Beta
+# Beta [![Build Status](https://secure.travis-ci.org/agoragames/beta.png)](https://secure.travis-ci.org/agoragames/beta.png)
 
 Beta is an access control library that uses a Redis whitelist to control authorization.
 It relies upon the Rails.env variable to check against its list of environments to 
