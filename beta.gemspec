@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/agoragames/beta"
   s.summary     = %q{Beta restriction gem}
   s.description = %q{Gem to handle multiple common cases of beta rollout}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "beta"
 
